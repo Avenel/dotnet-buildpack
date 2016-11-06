@@ -136,19 +136,19 @@ dotnet restore ${SRC_DIR}
 # configure some npm command during building
 export PATH="${PROJECT_DIR}/node_modules/.bin:${PATH}"
 
-echo "Publishing the app"
+# echo "Publishing the app"
 # Publish to heroku_output
-dotnet publish ${PROJECT_JSON_FILE} --output ${BUILD_DIR}/heroku_output --configuration ${CORE_CONFIGURATION}
+# dotnet publish ${PROJECT_JSON_FILE} --output ${BUILD_DIR}/heroku_output --configuration ${CORE_CONFIGURATION}
 
-echo "Publish Successed"
+# echo "Publish Successed"
 
-mkdir -p ${BUILD_DIR}/.profile.d
-cp -n ${BUILDPACK_DIR}/.profile.d/* ${BUILD_DIR}/.profile.d/
+# mkdir -p ${BUILD_DIR}/.profile.d
+# cp -n ${BUILDPACK_DIR}/.profile.d/* ${BUILD_DIR}/.profile.d/
 
-if [ -e ${SRC_DIR}/Procfile ]; then
-	cp ${SRC_DIR}/Procfile ${BUILD_DIR}
-else
-	cat << EOT >> ${BUILD_DIR}/Procfile
-web: cd \$HOME/heroku_output && dotnet ./${PROJECT_NAME}.dll --server.urls http://+:\$PORT ${CORE_ENVIRONMENT}
-EOT
-fi
+# if [ -e ${SRC_DIR}/Procfile ]; then
+#	cp ${SRC_DIR}/Procfile ${BUILD_DIR}
+#else
+#	cat << EOT >> ${BUILD_DIR}/Procfile
+#web: cd \$HOME/heroku_output && dotnet ./${PROJECT_NAME}.dll --server.urls http://+:\$PORT ${CORE_ENVIRONMENT}
+#EOT
+#fi
