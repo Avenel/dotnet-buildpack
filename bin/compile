@@ -131,9 +131,9 @@ echo "${PROJECT_NAME:=$PROJECT_DIR_NAME}"
 
 echo "Project JSON File: ${PROJECT_JSON_FILE}"
 
-#echo "Restoring the packages"
+echo "Restoring the packages"
 
-#dotnet restore ${SRC_DIR}
+dotnet restore ${SRC_DIR}
 
 # configure some npm command during building
 #export PATH="${PROJECT_DIR}/node_modules/.bin:${PATH}"
